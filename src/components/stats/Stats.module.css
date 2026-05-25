@@ -1,0 +1,24 @@
+.stats-container {
+  margin: 0 60px;
+  border: 2px dashed #f4c443;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  padding: 32px 24px;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stat-number {
+  font-size: 28px;
+  font-weight: bold;
+  color: #121417;
+}
+.stat-label {
+  font-size: 14px;
+  color: rgba(18, 20, 23, 0.7);
+  max-width: 90px;
+  line-height: 1.2;
+}
