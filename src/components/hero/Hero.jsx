@@ -1,10 +1,11 @@
 
 import css from './Hero.module.css';
+import img from '../../img/block2x.png';
 
 const Hero = () => {
   return (
     <section className={css.heroContainer}>
-      {/* Sol Blok: Metin İçerikleri */}
+
       <div className={css.heroLeft}>
         <h1 className={css.heroTitle}>
           Unlock your potential with the best <span className={css.highlightText}>language</span> tutors
@@ -17,11 +18,9 @@ const Hero = () => {
         <button className={css.getStartedBtn}>Get started</button>
       </div>
 
-      {/* Sağ Blok: Görsel Alanı */}
       <div className={css.heroRight}>
         <div className={css.imageCardBg}>
-          {/* ANA AVATAR/LAPTOP GÖRSELİ YERİ: Memoji ve Apple laptoplu görsel buraya gelecek */}
-          <img src="path_to_avatar_laptop_image.png" alt="Language Student Illustration" className={css.heroMainImg} />
+          <img src={img} alt="Language Student Illustration" className={css.heroMainImg} />
         </div>
       </div>
     </section>

@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background-color: #fff;
 }
 .logo-section {
   display: flex;
@@ -24,7 +23,14 @@
   text-decoration: none;
   color: #121417;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
+
+.nav-link.active {
+  color: #0b63d8;
+  font-weight: 600;
+}
+
 .auth-actions {
   display: flex;
   align-items: center;
@@ -38,6 +44,10 @@
   gap: 6px;
   font-weight: bold;
   cursor: pointer;
+}
+.login-btn svg {
+  width: 25px;
+  height: 25px;
 }
 .register-btn {
   background-color: #121417;
