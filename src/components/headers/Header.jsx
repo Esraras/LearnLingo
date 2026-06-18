@@ -9,25 +9,38 @@ const Header = () => {
   return (
     <header className={css.headerContainer}>
       <div className={css.logoSection}>
-        
         <span className={css.logoText}>LearnLingo</span>
       </div>
 
       <nav className={css.navLinks}>
-        <NavLink to="/" className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ""}`}>
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ''}`}
+        >
           Home
         </NavLink>
-        <NavLink to="/teachers" className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ""}`}>
+        <NavLink 
+          to="/teachers" 
+          className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ''}`}
+        >
           Teachers
         </NavLink>
         {isLoggedIn && (
-          <NavLink to="/favorites" className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ""}`}>
+          <NavLink 
+            to="/favorites" 
+            className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ''}`}
+          >
             Favorites
           </NavLink>
         )}
-        <NavLink to="/bookings" className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ""}`}>
-          Bookings
-        </NavLink>
+        {isLoggedIn && (
+          <NavLink 
+            to="/bookings" 
+            className={({ isActive }) => `${css.navLink} ${isActive ? css.active : ''}`}
+          >
+            Bookings
+          </NavLink>
+        )}
       </nav>
 
       <div className={css.authActions}>
@@ -39,10 +52,14 @@ const Header = () => {
               </svg>
               Log in
             </Link>
-            <Link to="/register" className={css.registerBtn}>Registration</Link>
+            <Link to="/register" className={css.registerBtn}>
+              Registration
+            </Link>
           </>
         ) : (
-          <Link to="/logout" className={css.loginBtn}>Logout</Link>
+          <Link to="/logout" className={css.loginBtn}>
+            Logout
+          </Link>
         )}
       </div>
     </header>

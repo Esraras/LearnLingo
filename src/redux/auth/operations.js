@@ -70,7 +70,7 @@ export const googleLogin = createAsyncThunk(
   "auth/googleLogin",
   async (_, thunkAPI) => {
     try {
-      const result = await signInWithPopup(auth, googleProvider); // signInWithRedirect can be used as an alternative
+      const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
       const token = await user.getIdToken();
       const userData = {
@@ -87,7 +87,7 @@ export const googleLogin = createAsyncThunk(
 );
 
 export const refreshUser = createAsyncThunk(
-  "auth/refresh",
+  "auth/refreshUser",
   async (_, thunkAPI) => {
     try {
       const user = auth.currentUser;

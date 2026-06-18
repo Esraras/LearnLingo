@@ -10,7 +10,7 @@ import PageTransition from "./components/ui/PageTransition";
 import "./App.css";
 import { refreshUser } from "./redux/auth/operations";
 import { useDispatch } from "react-redux";
-import { useEffect, memo, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import PublicRoute from "./routes/PublicRoute";
 import PrivateRoute from "./routes/PrivateRoute";
 
@@ -22,7 +22,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
       <PageTransition>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -60,4 +60,4 @@ function App() {
   );
 }
 
-export default memo(App);
+export default App;

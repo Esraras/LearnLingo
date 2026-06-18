@@ -3,26 +3,26 @@ import * as yup from "yup";
 export const loginSchema = yup.object({
   email: yup
     .string()
-    .required("Email gerekli")
-    .email("Geçerli bir email girin"),
+    .required("Email is required")
+    .email("Please enter a valid email"),
   password: yup
     .string()
-    .required("Şifre gerekli")
-    .min(8, "Şifre en az 8 karakter olmalı"),
+    .required("Password is required")
+    .min(8, "Password must be at least 8 characters"),
 });
 
 export const registerSchema = yup.object({
-  name: yup.string().required("İsim gerekli"),
+  name: yup.string().required("Name is required"),
   email: yup
     .string()
-    .required("Email gerekli")
-    .email("Geçerli bir email girin"),
+    .required("Email is required")
+    .email("Please enter a valid email"),
   password: yup
     .string()
-    .required("Şifre gerekli")
-    .min(8, "Şifre en az 8 karakter olmalı"),
+    .required("Password is required")
+    .min(8, "Password must be at least 8 characters"),
   confirmPassword: yup
     .string()
-    .required("Şifre onayı gerekli")
-    .oneOf([yup.ref("password")], "Şifreler eşleşmeli"),
+    .required("Please confirm your password")
+    .oneOf([yup.ref("password")], "Passwords must match"),
 });

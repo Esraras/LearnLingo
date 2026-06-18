@@ -1,8 +1,12 @@
 
 import css from './Hero.module.css';
 import img from '../../img/block2x.png';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+
+  const navigate = useNavigate();
+
   return (
     <section className={css.heroContainer}>
 
@@ -15,7 +19,7 @@ const Hero = () => {
           Elevate your language proficiency to new heights by connecting with 
           highly qualified and experienced tutors.
         </p>
-        <button className={css.getStartedBtn}>Get started</button>
+        <button onClick={() => navigate('/teachers')} className={css.getStartedBtn}>Get started</button>
       </div>
 
       <div className={css.heroRight}>

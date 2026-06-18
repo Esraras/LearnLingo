@@ -65,9 +65,8 @@ const Favorites = () => {
 
   return (
     <div className={css.page}>
-      <Header /> 
-      <br/>
-      {loading && <p className={css.info}>Yükleniyor...</p>}
+      <Header />
+      {loading && <p className={css.info}>Loading...</p>}
       {error && <p className={css.error}>{error}</p>}
 
       {!loading && !error && (
@@ -86,7 +85,7 @@ const Favorites = () => {
               ))}
             </div>
           ) : (
-            <p className={css.info}>Henüz favorilerinizde öğretmen yok.</p>
+            <p className={css.info}>No favorite teachers yet.</p>
           )}
         </>
       )}

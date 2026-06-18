@@ -85,8 +85,7 @@ const Teachers = () => {
       setHasMore(nextHasMore);
       setCursor(nextPageItems.length > 0 ? nextPageItems[nextPageItems.length - 1].id : null);
     } catch (fetchError) {
-      console.error("Teachers fetch error:", fetchError);
-      setError("Öğretmen verileri yüklenirken bir hata oluştu.");
+      setError("Unable to load teachers. Please try again later.");
     } finally {
       setLoading(false);
       setLoadingMore(false);
@@ -109,7 +108,7 @@ const Teachers = () => {
 
   const handleToggleFavorite = (teacherId) => {
     if (!isLoggedIn) {
-      toast.error("Bu işlem sadece yetkili kullanıcılar için geçerlidir. Lütfen giriş yapın.");
+      toast.error("This action is only available for logged-in users. Please sign in.");
       return;
     }
 
@@ -190,7 +189,6 @@ const Teachers = () => {
   return (
     <div className={css.page}>
       <Header />
-<br/>
       <div className={css.filterBar}>
         <div className={css.filterControl}>
           <label>Teaching Language</label>
@@ -246,7 +244,7 @@ const Teachers = () => {
         </div>
       </div>
 
-      {loading && <p className={css.info}>Yükleniyor...</p>}
+      {loading && <p className={css.info}>Loading...</p>}
       {error && <p className={css.error}>{error}</p>}
 
       {!loading && !error && (
@@ -265,7 +263,7 @@ const Teachers = () => {
                 />
               ))
             ) : (
-              <p className={css.info}>Henüz öğretmen bulunamadı.</p>
+              <p className={css.info}>No teachers found.</p>
             )}
           </div>
 
@@ -284,7 +282,7 @@ const Teachers = () => {
                 onClick={handleLoadMore}
                 disabled={loadingMore}
               >
-                {loadingMore ? "Daha fazla yükleniyor..." : "Load more"}
+                {loadingMore ? "Loading more..." : "Load more"}
               </button>
             </div>
           )}

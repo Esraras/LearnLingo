@@ -30,7 +30,7 @@ const Bookings = () => {
         const snapshot = await rdbGet(rdbQuery(teachersRef, orderByKey()));
         setTeachers(normalizeTeachers(snapshot.val()));
       } catch {
-        setError("Booked teachers yüklenirken bir hata oluştu.");
+        setError("Unable to load booked teachers.");
       } finally {
         setLoading(false);
       }
@@ -63,10 +63,9 @@ const Bookings = () => {
   return (
     <div className={css.page}>
       <Header />
-      <br />
       <h1 className={css.pageTitle}>Booked Teachers</h1>
 
-      {loading && <p className={css.info}>Yükleniyor...</p>}
+      {loading && <p className={css.info}>Loading...</p>}
       {error && <p className={css.error}>{error}</p>}
 
       {!loading && !error && (
@@ -85,7 +84,7 @@ const Bookings = () => {
               ))}
             </div>
           ) : (
-            <p className={css.info}>Henüz rezervasyon yapılmış öğretmen yok.</p>
+            <p className={css.info}>No booked teachers yet.</p>
           )}
         </>
       )}
